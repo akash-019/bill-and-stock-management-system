@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Branch_AdminService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BSMS" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBranch_AdminService_selectBranchAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectBranchAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IBranch_AdminService_selectBranchAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectBranchAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBranch_AdminService_getSingle_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSingle" />
+  </wsdl:message>
+  <wsdl:message name="IBranch_AdminService_getSingle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBranch_AdminService_addBranchAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:addBranchAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IBranch_AdminService_addBranchAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addBranchAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBranch_AdminService_updateBranchAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateBranchAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IBranch_AdminService_updateBranchAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateBranchAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBranch_AdminService_deleteBranchAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBranchAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IBranch_AdminService_deleteBranchAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBranchAdminResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBranch_AdminService">
+    <wsdl:operation name="selectBranchAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBranch_AdminService/selectBranchAdmin" message="tns:IBranch_AdminService_selectBranchAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBranch_AdminService/selectBranchAdminResponse" message="tns:IBranch_AdminService_selectBranchAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSingle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBranch_AdminService/getSingle" message="tns:IBranch_AdminService_getSingle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBranch_AdminService/getSingleResponse" message="tns:IBranch_AdminService_getSingle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addBranchAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBranch_AdminService/addBranchAdmin" message="tns:IBranch_AdminService_addBranchAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBranch_AdminService/addBranchAdminResponse" message="tns:IBranch_AdminService_addBranchAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBranchAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBranch_AdminService/updateBranchAdmin" message="tns:IBranch_AdminService_updateBranchAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBranch_AdminService/updateBranchAdminResponse" message="tns:IBranch_AdminService_updateBranchAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBranchAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBranch_AdminService/deleteBranchAdmin" message="tns:IBranch_AdminService_deleteBranchAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBranch_AdminService/deleteBranchAdminResponse" message="tns:IBranch_AdminService_deleteBranchAdmin_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBranch_AdminService" type="tns:IBranch_AdminService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="selectBranchAdmin">
+      <soap:operation soapAction="http://tempuri.org/IBranch_AdminService/selectBranchAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSingle">
+      <soap:operation soapAction="http://tempuri.org/IBranch_AdminService/getSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addBranchAdmin">
+      <soap:operation soapAction="http://tempuri.org/IBranch_AdminService/addBranchAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBranchAdmin">
+      <soap:operation soapAction="http://tempuri.org/IBranch_AdminService/updateBranchAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBranchAdmin">
+      <soap:operation soapAction="http://tempuri.org/IBranch_AdminService/deleteBranchAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Branch_AdminService">
+    <wsdl:port name="BasicHttpBinding_IBranch_AdminService" binding="tns:BasicHttpBinding_IBranch_AdminService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/BSMS.Branch_AdminService/Branch_AdminService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

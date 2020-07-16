@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BillerService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BSMS.BillerService" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BSMS" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBillerService_selectBiller_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectBiller" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_selectBiller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectBillerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_selectBillerperBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectBillerperBranch" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_selectBillerperBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectBillerperBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_getSingle_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSingle" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_getSingle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_addBiller_InputMessage">
+    <wsdl:part name="parameters" element="tns:addBiller" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_addBiller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addBillerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_updateBiller_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateBiller" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_updateBiller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateBillerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_deleteBiller_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBiller" />
+  </wsdl:message>
+  <wsdl:message name="IBillerService_deleteBiller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBillerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBillerService">
+    <wsdl:operation name="selectBiller">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillerService/selectBiller" message="tns:IBillerService_selectBiller_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillerService/selectBillerResponse" message="tns:IBillerService_selectBiller_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectBillerperBranch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillerService/selectBillerperBranch" message="tns:IBillerService_selectBillerperBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillerService/selectBillerperBranchResponse" message="tns:IBillerService_selectBillerperBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSingle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillerService/getSingle" message="tns:IBillerService_getSingle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillerService/getSingleResponse" message="tns:IBillerService_getSingle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addBiller">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillerService/addBiller" message="tns:IBillerService_addBiller_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillerService/addBillerResponse" message="tns:IBillerService_addBiller_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBiller">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillerService/updateBiller" message="tns:IBillerService_updateBiller_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillerService/updateBillerResponse" message="tns:IBillerService_updateBiller_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBiller">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillerService/deleteBiller" message="tns:IBillerService_deleteBiller_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillerService/deleteBillerResponse" message="tns:IBillerService_deleteBiller_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBillerService" type="tns:IBillerService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="selectBiller">
+      <soap:operation soapAction="http://tempuri.org/IBillerService/selectBiller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectBillerperBranch">
+      <soap:operation soapAction="http://tempuri.org/IBillerService/selectBillerperBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSingle">
+      <soap:operation soapAction="http://tempuri.org/IBillerService/getSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addBiller">
+      <soap:operation soapAction="http://tempuri.org/IBillerService/addBiller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBiller">
+      <soap:operation soapAction="http://tempuri.org/IBillerService/updateBiller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBiller">
+      <soap:operation soapAction="http://tempuri.org/IBillerService/deleteBiller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillerService">
+    <wsdl:port name="BasicHttpBinding_IBillerService" binding="tns:BasicHttpBinding_IBillerService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/BSMS.BillerService/BillerService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

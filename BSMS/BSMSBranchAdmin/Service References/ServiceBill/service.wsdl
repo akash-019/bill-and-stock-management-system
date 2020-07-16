@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BillService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BSMS.BillService" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BSMS" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBillService_selectBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectBill" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_selectBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_selectBillperBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectBillperBranch" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_selectBillperBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectBillperBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_getSingle_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSingle" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_getSingle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_addBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:addBill" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_addBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_updateBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateBill" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_updateBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_deleteBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBill" />
+  </wsdl:message>
+  <wsdl:message name="IBillService_deleteBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBillResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBillService">
+    <wsdl:operation name="selectBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillService/selectBill" message="tns:IBillService_selectBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillService/selectBillResponse" message="tns:IBillService_selectBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectBillperBranch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillService/selectBillperBranch" message="tns:IBillService_selectBillperBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillService/selectBillperBranchResponse" message="tns:IBillService_selectBillperBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSingle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillService/getSingle" message="tns:IBillService_getSingle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillService/getSingleResponse" message="tns:IBillService_getSingle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillService/addBill" message="tns:IBillService_addBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillService/addBillResponse" message="tns:IBillService_addBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillService/updateBill" message="tns:IBillService_updateBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillService/updateBillResponse" message="tns:IBillService_updateBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillService/deleteBill" message="tns:IBillService_deleteBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillService/deleteBillResponse" message="tns:IBillService_deleteBill_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBillService" type="tns:IBillService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="selectBill">
+      <soap:operation soapAction="http://tempuri.org/IBillService/selectBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectBillperBranch">
+      <soap:operation soapAction="http://tempuri.org/IBillService/selectBillperBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSingle">
+      <soap:operation soapAction="http://tempuri.org/IBillService/getSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addBill">
+      <soap:operation soapAction="http://tempuri.org/IBillService/addBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBill">
+      <soap:operation soapAction="http://tempuri.org/IBillService/updateBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBill">
+      <soap:operation soapAction="http://tempuri.org/IBillService/deleteBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillService">
+    <wsdl:port name="BasicHttpBinding_IBillService" binding="tns:BasicHttpBinding_IBillService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/BSMS.BillService/BillService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

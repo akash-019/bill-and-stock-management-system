@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="640fc8e4-bbfd-4107-bfeb-fc3bf5f43143" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/BSMS.BillService/BillService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="59de4506-9d90-4d62-9bc8-d1ad9c820679" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.BillService/BillService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="8d5efb71-b9b8-428d-9944-a6272cdb66fe" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.BillService/BillService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d3ef46e9-cb64-429b-a348-5b5f1b9c5fb6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.BillService/BillService/mex" />
+    <MetadataFile FileName="BSMS.BillService.xsd" MetadataType="Schema" ID="ee01f4f7-ef07-46e6-9997-e8551776e9fa" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.BillService/BillService/mex" />
+    <MetadataFile FileName="BSMS.xsd" MetadataType="Schema" ID="5a5390ba-4cca-4554-82e4-cda30ad5d64a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.BillService/BillService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

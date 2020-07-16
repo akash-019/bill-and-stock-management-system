@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e67302cf4e45482fa72256fa5263bbbb" Name="Diagram1">
+        <EntityTypeShape EntityType="BSMSModel.Admin" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BSMSModel.Bill" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BSMSModel.Biller" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="BSMSModel.Branch" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BSMSModel.Branch_Admin" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BSMSModel.Sale" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BSMSModel.Stock" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="BSMSModel.FK_Bill_ToTable_Biller" ManuallyRouted="false" />
+        <AssociationConnector Association="BSMSModel.FK_Bill_ToTable_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="BSMSModel.FK_Sales_ToTable_Bill" ManuallyRouted="false" />
+        <AssociationConnector Association="BSMSModel.FK_Biller_ToTable_Brach" ManuallyRouted="false" />
+        <AssociationConnector Association="BSMSModel.FK_Branch_ToTable_Branch_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="BSMSModel.FK_Sales_ToTable_Stock" ManuallyRouted="false" />
+        <AssociationConnector Association="BSMSModel.FK_Stock_To_Branch" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

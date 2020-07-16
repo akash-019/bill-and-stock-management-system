@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a307cbc4-444c-4513-9aab-72d0e3672182" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/BSMS.SalesService/SalesService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="49b00022-4620-44e4-85e2-e6923843d95f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.SalesService/SalesService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="90a67508-477d-4920-bfa3-96e16e0001b4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.SalesService/SalesService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="29b2b010-3c97-449d-b1ce-634867606ab0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.SalesService/SalesService/mex" />
+    <MetadataFile FileName="BSMS.SalesService.xsd" MetadataType="Schema" ID="0137c1fd-048f-45b4-8548-db92acd8a3fc" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.SalesService/SalesService/mex" />
+    <MetadataFile FileName="BSMS.xsd" MetadataType="Schema" ID="37df901a-74dd-4338-8a78-894d8538939b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/BSMS.SalesService/SalesService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

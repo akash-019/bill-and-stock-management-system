@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BSMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Biller_ID" Type="Int32" Nullable="false" />
+    <Property Name="Branch_ID" Type="Int32" Nullable="false" />
+    <Property Name="Customer_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Customer_Contact" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Payment_Mode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Biller" Relationship="Self.FK_Bill_ToTable_Biller" FromRole="Bill" ToRole="Biller" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_Bill_ToTable_Branch" FromRole="Bill" ToRole="Branch" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_ToTable_Bill" FromRole="Bill" ToRole="Sales" />
+  </EntityType>
+  <EntityType Name="Biller">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Branch_ID" Type="Int32" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Bills" Relationship="Self.FK_Bill_ToTable_Biller" FromRole="Biller" ToRole="Bill" />
+    <NavigationProperty Name="Branch" Relationship="Self.FK_Biller_ToTable_Brach" FromRole="Biller" ToRole="Branch" />
+  </EntityType>
+  <EntityType Name="Branch">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Br_Admin_ID" Type="Int32" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bills" Relationship="Self.FK_Bill_ToTable_Branch" FromRole="Branch" ToRole="Bill" />
+    <NavigationProperty Name="Billers" Relationship="Self.FK_Biller_ToTable_Brach" FromRole="Branch" ToRole="Biller" />
+    <NavigationProperty Name="Branch_Admin" Relationship="Self.FK_Branch_ToTable_Branch_Admin" FromRole="Branch" ToRole="Branch_Admin" />
+    <NavigationProperty Name="Stocks" Relationship="BSMSModel.FK_Stock_To_Branch" FromRole="Branch" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Branch_Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Branches" Relationship="Self.FK_Branch_ToTable_Branch_Admin" FromRole="Branch_Admin" ToRole="Branch" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stock_ID" Type="Int32" Nullable="false" />
+    <Property Name="Bill_ID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Int32" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK_Sales_ToTable_Bill" FromRole="Sales" ToRole="Bill" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK_Sales_ToTable_Stock" FromRole="Sales" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="DOM" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_ToTable_Stock" FromRole="Stock" ToRole="Sales" />
+    <Property Name="Available" Type="Int32" Nullable="false" />
+    <Property Name="Branch_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Branch" Relationship="BSMSModel.FK_Stock_To_Branch" FromRole="Stock" ToRole="Branch" />
+  </EntityType>
+  <Association Name="FK_Bill_ToTable_Biller">
+    <End Role="Biller" Type="Self.Biller" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Biller">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Biller_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_ToTable_Branch">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Branch_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_ToTable_Bill">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+    <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="Bill_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Biller_ToTable_Brach">
+    <End Role="Branch" Type="Self.Branch" Multiplicity="1" />
+    <End Role="Biller" Type="Self.Biller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Biller">
+        <PropertyRef Name="Branch_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Branch_ToTable_Branch_Admin">
+    <End Role="Branch_Admin" Type="Self.Branch_Admin" Multiplicity="1" />
+    <End Role="Branch" Type="Self.Branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch_Admin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Branch">
+        <PropertyRef Name="Br_Admin_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sales_ToTable_Stock">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+    <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="Stock_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BSMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Bills" EntityType="Self.Bill" />
+    <EntitySet Name="Billers" EntityType="Self.Biller" />
+    <EntitySet Name="Branches" EntityType="Self.Branch" />
+    <EntitySet Name="Branch_Admin" EntityType="Self.Branch_Admin" />
+    <EntitySet Name="Sales" EntityType="Self.Sale" />
+    <EntitySet Name="Stocks" EntityType="Self.Stock" />
+    <AssociationSet Name="FK_Bill_ToTable_Biller" Association="Self.FK_Bill_ToTable_Biller">
+      <End Role="Biller" EntitySet="Billers" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_ToTable_Branch" Association="Self.FK_Bill_ToTable_Branch">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_ToTable_Bill" Association="Self.FK_Sales_ToTable_Bill">
+      <End Role="Bill" EntitySet="Bills" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Biller_ToTable_Brach" Association="Self.FK_Biller_ToTable_Brach">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Biller" EntitySet="Billers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Branch_ToTable_Branch_Admin" Association="Self.FK_Branch_ToTable_Branch_Admin">
+      <End Role="Branch_Admin" EntitySet="Branch_Admin" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sales_ToTable_Stock" Association="Self.FK_Sales_ToTable_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_To_Branch" Association="BSMSModel.FK_Stock_To_Branch">
+      <End Role="Branch" EntitySet="Branches" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Stock_To_Branch">
+    <End Type="BSMSModel.Branch" Role="Branch" Multiplicity="1" />
+    <End Type="BSMSModel.Stock" Role="Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
